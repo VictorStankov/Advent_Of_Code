@@ -17,6 +17,8 @@ int main()
 	for (int i=0; i<12; i++)
 	    (line[i] - '0') ? codes[i][1]++ : codes[i][0]++;
     }
+    
+    fclose(input);
 
     for (int i=0; i<12; i++)
 	gamma += ((codes[i][0] > codes[i][1]) ? 0 : 1) * (int)pow(2, 11-i);	

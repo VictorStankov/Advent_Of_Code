@@ -28,6 +28,9 @@ int main()
 		break;
 	}
     }
+
+    fclose(input);
+
     printf("%d\n", position * depth);
     return 0;
 }

@@ -19,6 +19,9 @@ int main()
 	
 	codes[i] = codes_copy[i++] = strtol(line, &p, 2);
     }
+
+    fclose(input);
+
     printf("%d %d\n", filter(codes, 0, 0), filter(codes_copy, 1, 0));
     return 0;
 }

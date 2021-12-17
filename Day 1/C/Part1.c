@@ -17,6 +17,8 @@ int main()
         previous = num;
     }
 
+    fclose(input);
+
     printf("%d\n", counter);
     return 0;
 }

@@ -23,6 +23,8 @@ int main()
         numbers[1] = numbers[0];
     }
 
+    fclose(input);
+
     printf("%d\n", counter);
     return 0;
 }
