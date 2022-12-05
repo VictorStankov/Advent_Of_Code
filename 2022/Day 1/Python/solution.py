@@ -1,5 +1,5 @@
 with open('../input.txt') as inp:
-    text_split = [''] + inp.readlines()
+    text_split = [''] + inp.read().split('\n')
     helpers = []
     for i in range(len(text_split)):
         if text_split[i] == '':

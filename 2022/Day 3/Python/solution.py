@@ -1,6 +1,5 @@
 with open('../input.txt') as inp:
-    lines = inp.readlines()
-
+    lines = inp.read().split('\n')
     sum = 0
     sub_values = {0: 38, 1: 96}
     for line in lines:
