@@ -1,8 +1,8 @@
+import matplotlib.pyplot as plt
+import numpy as np
 from drawnow import drawnow
 
 from point import Point
-import numpy as np
-import matplotlib.pyplot as plt
 
 coord = {(0, 0)}
 points = [Point() for _ in range(10)]
@@ -21,7 +21,6 @@ def print_points():
     for k in range(len(points)):
         matrix[points[k].y + matrix.shape[0] // 2][points[k].x + matrix.shape[1] // 2] = k + 10
     plt.imshow(matrix)
-    # plt.pause(0.3)
 
 
 with open('../input.txt') as inp:
@@ -41,8 +40,8 @@ with open('../input.txt') as inp:
                     diff = points[i - 1] - points[i]
                     points[i].move_x(0 if diff[0] == 0 else diff[0] // abs(diff[0]))
                     points[i].move_y(0 if diff[1] == 0 else diff[1] // abs(diff[1]))
-                    drawnow(print_points)
-                    if i == len(points) - 1:
+                    drawnow(print_points)  # Very slow, disable for results
+                    if i == 9:  # Which element to be checked: Part 1: 1, Part 2: 9
                         coord.add((points[i].x, points[i].y))
 
 print(len(coord))
