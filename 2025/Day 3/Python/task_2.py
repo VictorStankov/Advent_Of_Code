@@ -1,0 +1,26 @@
+def solution(lines, battery_num: int):
+    result = 0
+    for line in lines:
+        line = line.strip()
+        line_len = len(line)
+        start_pos = 0
+        end_pos = battery_num
+        num = ''
+
+        while end_pos > 0:
+            highest = sorted(line[start_pos: line_len - end_pos + 1], reverse=True)[0]
+            start_pos = line[start_pos:line_len - end_pos + 1].find(highest) + 1 + start_pos
+
+            end_pos -= 1
+
+            num += highest
+        result += int(num)
+
+    return result
+
+
+if __name__ == "__main__":
+    with open("../input.txt") as file:
+        lines = file.readlines()
+
+    print(solution(lines, 12))
