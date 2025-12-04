@@ -4,14 +4,14 @@ def solution(lines, battery_num: int):
         line = line.strip()
         line_len = len(line)
         start_pos = 0
-        end_pos = battery_num
+        batteries_left = battery_num
         num = ''
 
-        while end_pos > 0:
-            highest = sorted(line[start_pos: line_len - end_pos + 1], reverse=True)[0]
-            start_pos = line[start_pos:line_len - end_pos + 1].find(highest) + 1 + start_pos
+        while batteries_left > 0:
+            highest = sorted(line[start_pos: line_len - batteries_left + 1], reverse=True)[0]
+            start_pos = line[start_pos:line_len - batteries_left + 1].find(highest) + 1 + start_pos
 
-            end_pos -= 1
+            batteries_left -= 1
 
             num += highest
         result += int(num)
